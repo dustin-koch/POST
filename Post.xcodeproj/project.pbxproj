@@ -13,6 +13,8 @@
 		CA8BAA252289FE4F008043EF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA8BAA232289FE4F008043EF /* LaunchScreen.storyboard */; };
 		CA8BAA2E2289FF60008043EF /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8BAA2D2289FF60008043EF /* Post.swift */; };
 		CA8BAA302289FFE3008043EF /* PostController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8BAA2F2289FFE3008043EF /* PostController.swift */; };
+		CA8BAA34228A08EE008043EF /* PostsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8BAA33228A08EE008043EF /* PostsTableViewController.swift */; };
+		CA8BAA37228A11D3008043EF /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8BAA36228A11D3008043EF /* DateFormatter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		CA8BAA262289FE4F008043EF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CA8BAA2D2289FF60008043EF /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		CA8BAA2F2289FFE3008043EF /* PostController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostController.swift; sourceTree = "<group>"; };
+		CA8BAA33228A08EE008043EF /* PostsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsTableViewController.swift; sourceTree = "<group>"; };
+		CA8BAA36228A11D3008043EF /* DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +61,7 @@
 			isa = PBXGroup;
 			children = (
 				CA8BAA1E2289FE4E008043EF /* Main.storyboard */,
+				CA8BAA35228A08F7008043EF /* View Controller */,
 				CA8BAA31228A0004008043EF /* Model */,
 				CA8BAA32228A000B008043EF /* Model Controller */,
 				CA8BAA2C2289FF2C008043EF /* Resources */,
@@ -87,8 +92,17 @@
 			isa = PBXGroup;
 			children = (
 				CA8BAA2F2289FFE3008043EF /* PostController.swift */,
+				CA8BAA36228A11D3008043EF /* DateFormatter.swift */,
 			);
 			path = "Model Controller";
+			sourceTree = "<group>";
+		};
+		CA8BAA35228A08F7008043EF /* View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				CA8BAA33228A08EE008043EF /* PostsTableViewController.swift */,
+			);
+			path = "View Controller";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -163,8 +177,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				CA8BAA1B2289FE4E008043EF /* AppDelegate.swift in Sources */,
+				CA8BAA34228A08EE008043EF /* PostsTableViewController.swift in Sources */,
 				CA8BAA2E2289FF60008043EF /* Post.swift in Sources */,
 				CA8BAA302289FFE3008043EF /* PostController.swift in Sources */,
+				CA8BAA37228A11D3008043EF /* DateFormatter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
