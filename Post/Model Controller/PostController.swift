@@ -14,8 +14,36 @@ class PostController {
     let baseURL = URL(string: "http://devmtn-posts.firebaseio.com/posts")
     var posts: [Post] = []
     
+    func addPostWith(userName: String, text: String, completion: @escaping () -> Void){
+        let post = Post(text: text, username: userName)
+        var postData: Data?
+        do {
+            let jsonEncoder = JSONEncoder()
+            postData = try jsonEncoder.encode(post)
+        } catch  {
+            print(error.localizedDescription)
+        }
+
+        guard let url = baseURL else { return }
+        let postEndpoint = url.appendingPathExtension("json")
+        var request = URLRequest(url: postEndpoint)
+        request.httpMethod = "POST"
+        request.httpBody = postData
+
+        URLSession.shared.dataTask(with: request) { (data, _, error) in
+            if let error = error {
+                print(error.localizedDescription)
+                return
+            }
+            guard let data = data else { return }
+            self.fetchPosts() {
+                completion()
+            }
+        }.resume()
+    }//END OF ADD POST
+    
     func fetchPosts(completion: @escaping () -> Void ) {
-        guard let url = baseURL else { completion(); return }
+        guard let url = baseURL else { return }
         let getterEndpoint = url.appendingPathExtension("json")
         
         let dataTask = URLSession.shared.dataTask(with: getterEndpoint) {
@@ -25,7 +53,7 @@ class PostController {
                 completion()
                 return
             }
-            guard let data = data else { completion(); return }
+            guard let data = data else { return }
             let jsonDecoder = JSONDecoder()
             do {
                 let postsDictionary = try jsonDecoder.decode([String:Post].self, from: data)
@@ -40,5 +68,5 @@ class PostController {
             }
         }
         dataTask.resume()
-    }
+    }//END OF FETCH POST
 }//END OF CLASS
